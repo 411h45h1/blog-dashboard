@@ -52,7 +52,7 @@ const BlogItem = () => {
 
           <Card
             header={i.title}
-            description={i.content}
+            description={i.summary}
             style={{
               marginTop: 20,
               marginBottom: 30,
