@@ -10,14 +10,14 @@ const LabelButtons = () => {
       <Grid>
         <Grid.Column floated="right" width={6}>
           <Label.Group>
-            {/* <Label
+            <Label
               as={"a"}
               color="black"
               content="Click here for the repository"
-              href="https://github.com/AhmedAlihashi/noted"
+              href="https://github.com/AhmedAlihashi/blog"
               target="_blank"
               rel="noopener noreferrer"
-            /> */}
+            />
             <Label
               as={"a"}
               color="grey"

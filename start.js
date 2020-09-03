@@ -12,7 +12,7 @@ const createWindow = async () => {
   mainWindow = new BrowserWindow({
     icon: __dirname + "/build/favicon.ico",
     minHeight: 830,
-    minWidth: 470,
+    minWidth: 787,
     maxHeight: 1500,
     maxWidth: 2050,
     webPreferences: {
@@ -20,7 +20,7 @@ const createWindow = async () => {
     },
   });
 
-  mainWindow.removeMenu();
+  // mainWindow.removeMenu();
 
   mainWindow.loadURL(
     process.env.ELECTRON_START_URL ||

@@ -13,7 +13,7 @@ const BlogItem = () => {
         <Segment
           raised
           style={{
-            backgroundColor: "#C9BF77",
+            backgroundColor: "#635435",
           }}
         >
           {i.importance && (
@@ -34,12 +34,12 @@ const BlogItem = () => {
           )}
           <Label
             as="a"
-            size="tiny"
+            size="medium"
             attached="top left"
             content="❌"
             onClick={() => removeBlog(i.bid)}
             style={{
-              backgroundColor: "#C9BF77",
+              backgroundColor: "#635435",
             }}
           />
           <Label
@@ -55,7 +55,7 @@ const BlogItem = () => {
             style={{
               marginTop: 20,
               marginBottom: 30,
-              backgroundColor: "#F2F2EF",
+              backgroundColor: "whitesmoke",
             }}
           />
         </Segment>

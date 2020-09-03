@@ -19,7 +19,7 @@ const App = () => {
   const state = useContext(AppContext);
   const { loggedIn } = state;
   const onboardColors = "#E8ECFF";
-  const mainColor = "#FDD543";
+  const mainColor = "#9e8754";
 
   return (
     <Router basename="/">

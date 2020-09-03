@@ -13,7 +13,7 @@ export const NOTE_SCROLL_MOBILE = ({ col }) => {
         minHeight: "20vh",
         maxHeight: "25vh",
         overflowY: "scroll",
-        backgroundColor: "#FDD543",
+        backgroundColor: "#9e8754",
       }}
     >
       <Grid columns={col}>
@@ -31,7 +31,7 @@ export const NOTE_SCROLL_TABLET = ({ col }) => {
       style={{
         maxHeight: "65vh",
         overflowY: "scroll",
-        backgroundColor: "#FDD543",
+        backgroundColor: "#9e8754",
       }}
     >
       <Grid columns={col}>
@@ -49,7 +49,7 @@ export const NOTE_SCROLL_COMPUTER = ({ col }) => {
       style={{
         maxHeight: "65vh",
         overflowY: "scroll",
-        backgroundColor: "#FDD543",
+        backgroundColor: "#9e8754",
       }}
     >
       <Grid columns={col}>
@@ -67,7 +67,7 @@ export const NOTE_SCROLL_LARGESCREEN = ({ col }) => {
       style={{
         maxHeight: "65vh",
         overflowY: "scroll",
-        backgroundColor: "#FDD543",
+        backgroundColor: "#9e8754",
       }}
     >
       <Grid columns={col}>
@@ -85,7 +85,7 @@ export const NOTE_SCROLL_GREATER = ({ col }) => {
       style={{
         maxHeight: "65vh",
         overflowY: "scroll",
-        backgroundColor: "#FDD543",
+        backgroundColor: "#9e8754",
       }}
     >
       <Grid columns={col}>

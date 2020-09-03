@@ -24,7 +24,7 @@ const ResponsiveInput = ({ contentRows, size }) => {
     );
 
   return (
-    <Segment raised style={{ backgroundColor: "#DDBA3B" }}>
+    <Segment raised style={{ backgroundColor: "#8A764A" }}>
       <Form size={size}>
         <Form.Input
           label="Title"
