@@ -1,0 +1,84 @@
+{
+  "name": "blog-dashboard",
+  "homepage": "./",
+  "main": "./start.js",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Ahmed Ali",
+  "dependencies": {
+    "@artsy/fresnel": "^1.2.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "cross-env": "^7.0.2",
+    "electron-dl": "^3.0.2",
+    "electron-packager": "^15.0.0",
+    "electron-store": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "firebase": "^7.19.1",
+    "moment": "^2.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1"
+  },
+  "scripts": {
+    "start": "nf start -p 3000",
+    "build-win": "npm run build && electron-packager . --platform win32 --icon ./public/favicon.ico --out ./dist --overwrite",
+    "build~win": "yarn build && electron-packager . --platform win32 --icon ./public/favicon.ico --out ./dist --overwrite",
+    "build": "react-scripts build",
+    "dev": "yarn build && yarn start",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/start-react",
+    "react-start": "cross-env BROWSER=none react-scripts start",
+    "postinstall": "install-app-deps"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^9.2.1",
+    "electron-builder": "^22.8.0",
+    "enzyme": "^3.11.0"
+  },
+  "build": {
+    "productName": "Blog",
+    "copyright": "Copyright © 2020 ",
+    "mac": {
+      "icon": "./public/favicon.ico"
+    },
+    "win": {
+      "icon": "./public/favicon.ico"
+    },
+    "files": [
+      "./build/**/*",
+      "./dist/**/*",
+      "./node_modules/**/*",
+      "./public/**/*",
+      "*.js"
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
+  }
+}

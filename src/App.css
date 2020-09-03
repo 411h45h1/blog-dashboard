@@ -1,0 +1,21 @@
+.App {
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.MainCard {
+  min-height: 90vh;
+  max-width: 90vw;
+}
+
+#title {
+  font-size: 5rem;
+  color: black;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
