@@ -36,26 +36,26 @@ const ResponsiveInput = ({ contentRows, size }) => {
           <label>Level of importance</label>
           <Form.Radio
             label="Lv.1"
-            value="Lv.1"
-            checked={radioValue === "Lv.1"}
+            value="basic"
+            checked={radioValue === "basic"}
             onChange={(e, { value }) => setRadioValue(value)}
           />
           <Form.Radio
             label="Lv.2"
-            value="Lv.2"
-            checked={radioValue === "Lv.2"}
+            value="info"
+            checked={radioValue === "info"}
             onChange={(e, { value }) => setRadioValue(value)}
           />
           <Form.Radio
             label="Lv.3"
-            value="Lv.3"
-            checked={radioValue === "Lv.3"}
+            value="warning"
+            checked={radioValue === "warning"}
             onChange={(e, { value }) => setRadioValue(value)}
           />
           <Form.Radio
             label="Lv.4"
-            value="Lv.4"
-            checked={radioValue === "Lv.4"}
+            value="danger"
+            checked={radioValue === "danger"}
             onChange={(e, { value }) => setRadioValue(value)}
           />
         </Form.Group>

@@ -30,7 +30,7 @@ export const addBlogEntries = async (
     summary,
     content,
     importance,
-    date: moment().format("llll"),
+    date: `${moment().format("lll")}`,
   });
 
   return req;

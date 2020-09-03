@@ -59,7 +59,7 @@ const AppState = (props) => {
     dispatch({ type: "LOG_OUT" });
   };
 
-  const removeNote = (uid, bid) =>
+  const removeBlog = (uid, bid) =>
     deleteBlogEntries(uid, bid).then(() => onBlogEntries());
 
   return (
@@ -71,7 +71,7 @@ const AppState = (props) => {
         blogEntries: state.blogEntries,
         loadBlog,
         onLogout,
-        removeNote,
+        removeBlog,
       }}
     >
       {props.children}

@@ -4,7 +4,7 @@ import AppContext from "../../context/appContext";
 
 const BlogItem = () => {
   const state = useContext(AppContext);
-  const { blogEntries, removeNote } = state;
+  const { blogEntries, removeBlog } = state;
 
   return (
     blogEntries &&
@@ -19,18 +19,17 @@ const BlogItem = () => {
           {i.importance && (
             <Label
               color={
-                i.importance === "Lv.1"
+                i.importance === "basic"
                   ? "grey"
-                  : i.importance === "Lv.2"
+                  : i.importance === "info"
                   ? "blue"
-                  : i.importance === "Lv.3"
+                  : i.importance === "warning"
                   ? "orange"
-                  : i.importance === "Lv.4"
+                  : i.importance === "danger"
                   ? "red"
                   : null
               }
               attached="top right"
-              content={i.importance}
             />
           )}
           <Label
@@ -38,7 +37,7 @@ const BlogItem = () => {
             size="tiny"
             attached="top left"
             content="❌"
-            onClick={() => removeNote(i.bid)}
+            onClick={() => removeBlog(i.bid)}
             style={{
               backgroundColor: "#C9BF77",
             }}
