@@ -50,11 +50,14 @@ const OnBoard = () => {
               <Card
                 link
                 href="https://github.com/AhmedAlihashi/blog"
-                target="blank_"
+                target="_blank"
                 header="Welcome to the Blog Dashboard!"
                 meta="By Ahmed Ali"
                 description="This is the dashboard for a react native app I built"
-                style={{ textAlign: "center", fontsize: "rem" }}
+                style={{
+                  textAlign: "center",
+                  fontsize: "rem",
+                }}
               />
             </Grid>
           )}

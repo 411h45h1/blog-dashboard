@@ -18,7 +18,7 @@ import OnBoard from "./components/OnBoard";
 const App = () => {
   const state = useContext(AppContext);
   const { loggedIn } = state;
-  const onboardColors = "#E8ECFF";
+  const onboardColors = "#546B9E";
   const mainColor = "#9e8754";
 
   return (
