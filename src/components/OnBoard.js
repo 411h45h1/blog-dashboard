@@ -33,13 +33,13 @@ const OnBoard = () => {
               content="Login"
               onClick={() => handleLogin()}
             />
-            <Button
+            {/* <Button
               toggle
               color="black"
               active={toggleRegister}
               content="Register"
               onClick={() => handleRegister()}
-            />
+            /> */}
           </Button.Group>
         </Grid.Column>
         <p id="title">Blog Dashboard</p>
