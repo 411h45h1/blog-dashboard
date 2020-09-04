@@ -29,8 +29,8 @@
     "semantic-ui-react": "^1.2.1"
   },
   "scripts": {
-    "start": "nf start -p 3000",
     "dev": "yarn build && yarn start",
+    "start": "nf start -p 3000",
     "build-win": "npm run build && electron-packager . --platform win32 --icon ./public/favicon.ico --out ./dist --overwrite",
     "build~win": "yarn build && electron-packager . --platform win32 --icon ./public/favicon.ico --out ./dist --overwrite",
     "build": "react-scripts build",
