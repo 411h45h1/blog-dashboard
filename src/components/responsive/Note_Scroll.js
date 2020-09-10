@@ -5,7 +5,6 @@ import BlogItem from "../app/BlogItem";
 export const NOTE_SCROLL_MOBILE = ({ col }) => {
   return (
     <Segment
-      fluid
       inverted
       style={{
         marginTop: 10,
@@ -26,7 +25,6 @@ export const NOTE_SCROLL_MOBILE = ({ col }) => {
 export const NOTE_SCROLL_TABLET = ({ col }) => {
   return (
     <Segment
-      fluid
       inverted
       style={{
         maxHeight: "65vh",
@@ -44,7 +42,6 @@ export const NOTE_SCROLL_TABLET = ({ col }) => {
 export const NOTE_SCROLL_COMPUTER = ({ col }) => {
   return (
     <Segment
-      fluid
       inverted
       style={{
         maxHeight: "65vh",
@@ -62,7 +59,6 @@ export const NOTE_SCROLL_COMPUTER = ({ col }) => {
 export const NOTE_SCROLL_LARGESCREEN = ({ col }) => {
   return (
     <Segment
-      fluid
       inverted
       style={{
         maxHeight: "65vh",
@@ -80,7 +76,6 @@ export const NOTE_SCROLL_LARGESCREEN = ({ col }) => {
 export const NOTE_SCROLL_GREATER = ({ col }) => {
   return (
     <Segment
-      fluid
       inverted
       style={{
         maxHeight: "65vh",

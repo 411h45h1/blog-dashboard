@@ -20,7 +20,7 @@ const createWindow = async () => {
     },
   });
 
-  mainWindow.removeMenu();
+  // mainWindow.removeMenu();
 
   mainWindow.loadURL(
     process.env.ELECTRON_START_URL ||

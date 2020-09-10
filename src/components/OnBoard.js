@@ -14,12 +14,12 @@ const OnBoard = () => {
     return setToggleLogin(!toggleLogin);
   };
 
-  const handleRegister = () => {
-    if (toggleLogin) {
-      setToggleLogin(false);
-    }
-    return setToggleRegister(!toggleRegister);
-  };
+  // const handleRegister = () => {
+  //   if (toggleLogin) {
+  //     setToggleLogin(false);
+  //   }
+  //   return setToggleRegister(!toggleRegister);
+  // };
 
   return (
     <Grid>

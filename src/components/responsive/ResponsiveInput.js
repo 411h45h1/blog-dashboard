@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Segment, Form } from "semantic-ui-react";
+import React, { useState, useEffect, useContext } from "react";
+import { Segment, Form, Label } from "semantic-ui-react";
 import { addBlogEntries } from "../../api/blog";
 import AppContext from "../../context/appContext";
 
@@ -9,6 +9,13 @@ const ResponsiveInput = ({ contentRows, size }) => {
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
   const [radioValue, setRadioValue] = useState(null);
+  const [image, setImage] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
+
+  const [previewImg, setPreviewImg] = useState(null);
+
+  const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
+
   const state = useContext(AppContext);
   const { username, loadBlog } = state;
 
@@ -18,14 +25,77 @@ const ResponsiveInput = ({ contentRows, size }) => {
     setAuthor(username);
   }
 
+  const handleImageChange = (e) => {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      setImage(file);
+      setImagePreviewUrl(reader.result);
+      setShowPreview(true);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  useEffect(() => {
+    if (image && imagePreviewUrl) {
+      setPreviewImg(<img src={imagePreviewUrl} alt="preview" />);
+    }
+  }, [image, imagePreviewUrl]);
+
   const handleSubmit = async () =>
     await addBlogEntries(author, title, summary, content, importance).then(() =>
       loadBlog()
     );
 
+  const onHidePreview = () => {
+    setShowPreview(false);
+  };
+
   return (
-    <Segment raised style={{ backgroundColor: "#8A764A" }}>
+    <Segment
+      raised
+      style={{
+        backgroundColor: "#8A764A",
+        maxHeight: "65vh",
+        overflowY: "scroll",
+      }}
+    >
       <Form size={size}>
+        <div className="previewComponent">
+          <Form.Input
+            label="Image Upload"
+            type="file"
+            onChange={(e) => handleImageChange(e)}
+          />
+          <Form.Button
+            type="reset"
+            value="Clear Image"
+            color="red"
+            compact
+            onClick={() => onHidePreview()}
+          >
+            Reset Image
+          </Form.Button>
+
+          {showPreview && (
+            <Segment className="imgPreview" inverted>
+              <Label
+                as="a"
+                attached="top right"
+                color="teal"
+                onClick={() => onHidePreview()}
+              >
+                Hide
+              </Label>
+
+              {previewImg}
+            </Segment>
+          )}
+        </div>
         <Form.Input
           label="Title"
           value={title}
