@@ -11,6 +11,7 @@ const ResponsiveInput = ({ contentRows, size }) => {
   const [radioValue, setRadioValue] = useState(null);
   const [image, setImage] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
+  const [imageSection, setImageSection] = useState(false);
 
   const [previewImg, setPreviewImg] = useState(null);
 
@@ -55,47 +56,66 @@ const ResponsiveInput = ({ contentRows, size }) => {
     setShowPreview(false);
   };
 
+  const showAddImageSection = () => setImageSection(!imageSection);
+
   return (
     <Segment
       raised
       style={{
         backgroundColor: "#8A764A",
         maxHeight: "65vh",
-        overflowY: "scroll",
+        overflowY: imageSection ? "scroll" : null,
       }}
     >
+      <Label
+        as="a"
+        attached="top left"
+        content={imageSection ? "Hide image section" : "Add an image"}
+        color="black"
+        onClick={() => showAddImageSection()}
+      />
+
       <Form size={size}>
-        <div className="previewComponent">
-          <Form.Input
-            label="Image Upload"
-            type="file"
-            onChange={(e) => handleImageChange(e)}
-          />
-          <Form.Button
-            type="reset"
-            value="Clear Image"
-            color="red"
-            compact
-            onClick={() => onHidePreview()}
-          >
-            Reset Image
-          </Form.Button>
+        {imageSection && (
+          <div className="previewComponent">
+            <Form.Input
+              label="Image Upload"
+              type="file"
+              onChange={(e) => handleImageChange(e)}
+            />
+            <Form.Button
+              type="reset"
+              value="Clear Image"
+              style={{
+                backgroundColor: "#635435",
+                color: "white",
+              }}
+              compact
+              onClick={() => onHidePreview()}
+            >
+              Reset Image
+            </Form.Button>
 
-          {showPreview && (
-            <Segment className="imgPreview" inverted>
-              <Label
-                as="a"
-                attached="top right"
-                color="teal"
-                onClick={() => onHidePreview()}
-              >
-                Hide
-              </Label>
+            {showPreview && (
+              <Segment className="imgPreview" inverted>
+                <Label
+                  as="a"
+                  attached="top right"
+                  style={{
+                    backgroundColor: "white",
+                    color: "black",
+                  }}
+                  onClick={() => onHidePreview()}
+                >
+                  Hide
+                </Label>
 
-              {previewImg}
-            </Segment>
-          )}
-        </div>
+                {previewImg}
+              </Segment>
+            )}
+          </div>
+        )}
+
         <Form.Input
           label="Title"
           value={title}
