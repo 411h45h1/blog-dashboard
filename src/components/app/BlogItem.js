@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Grid, Segment, Card, Label } from "semantic-ui-react";
+import { Grid, Segment, Icon, Card, Label } from "semantic-ui-react";
 import AppContext from "../../context/appContext";
 
 const BlogItem = () => {
@@ -48,6 +48,16 @@ const BlogItem = () => {
             attached="bottom left"
             content={i.date}
           />
+
+          {i.imageRef && (
+            <Label
+              style={{ backgroundColor: "#635435" }}
+              size="tiny"
+              attached="bottom right"
+            >
+              <Icon size="big" name="picture" />
+            </Label>
+          )}
 
           <Card
             header={i.title}
