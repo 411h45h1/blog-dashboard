@@ -51,11 +51,11 @@ const BlogItem = () => {
 
           {i.imageRef && (
             <Label
-              style={{ backgroundColor: "#635435" }}
+              style={{ backgroundColor: "#635435", padding: 5 }}
               size="tiny"
               attached="bottom right"
             >
-              <Icon size="big" name="picture" />
+              <Icon size="big" name="picture" style={{ color: "white" }} />
             </Label>
           )}
 
