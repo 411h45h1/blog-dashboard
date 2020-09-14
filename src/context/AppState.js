@@ -9,7 +9,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import { logoutUser } from "../api/auth";
-import { getBlogEntries, deleteBlogEntries } from "../api/blog";
+import { getBlogEntries, deleteBlogEntries, dbImageUpload } from "../api/blog";
 
 const AppState = (props) => {
   const initialState = {
@@ -32,6 +32,9 @@ const AppState = (props) => {
     );
 
   const onBlogEntries = useCallback(loadBlog, [uid]);
+
+  const ImageUpload = async (image) =>
+    await dbImageUpload(image).then((res) => console.log(res));
 
   useEffect(() => {
     authCheck();
@@ -69,6 +72,7 @@ const AppState = (props) => {
         loggedIn: state.loggedIn,
         blogLoaded: state.blogLoaded,
         blogEntries: state.blogEntries,
+        ImageUpload,
         loadBlog,
         onLogout,
         removeBlog,

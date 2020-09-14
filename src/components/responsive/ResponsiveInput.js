@@ -18,7 +18,7 @@ const ResponsiveInput = ({ contentRows, size }) => {
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
 
   const state = useContext(AppContext);
-  const { username, loadBlog } = state;
+  const { username, loadBlog, ImageUpload } = state;
 
   let importance = radioValue;
 
@@ -73,6 +73,14 @@ const ResponsiveInput = ({ contentRows, size }) => {
         content={imageSection ? "Hide image section" : "Add an image"}
         color="black"
         onClick={() => showAddImageSection()}
+      />
+
+      <Label
+        as="a"
+        attached="top right"
+        content="Upload"
+        color="blue"
+        onClick={() => ImageUpload(image)}
       />
 
       <Form size={size}>

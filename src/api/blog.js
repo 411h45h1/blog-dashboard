@@ -1,8 +1,11 @@
 import firebase from "../firebase";
 import "firebase/firestore";
+import "firebase/firebase-storage";
+
 import moment from "moment";
 
 const db = firebase.firestore();
+const storageRef = firebase.storage().ref();
 
 export const getBlogEntries = async () => {
   const collection = db.collection("blog");
@@ -43,4 +46,21 @@ export const deleteBlogEntries = async (bid) => {
 
   const req = await collection.doc(`${bid}`).delete();
   return req;
+};
+
+export const dbImageUpload = async (image) => {
+  let imageId = Date.now();
+  let blogImageRef = storageRef.child(`blog/images/${imageId}.jpg`);
+
+  let uploadTask = async () => await blogImageRef.put(image);
+
+  let getSnap = uploadTask().then(
+    async (snapshot) => await snapshot.ref.getDownloadURL()
+  );
+
+  let getDownloadLink = getSnap.then(async (res) => await res);
+
+  let downloadLink = await getDownloadLink;
+
+  return { imageId, downloadLink };
 };
