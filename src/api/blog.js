@@ -22,7 +22,7 @@ export const addBlogEntries = async (
   summary,
   content,
   importance,
-  image
+  imageRef
 ) => {
   const collection = db.collection("blog");
   const bid = Date.now();
@@ -34,7 +34,7 @@ export const addBlogEntries = async (
     summary,
     content,
     importance,
-    image,
+    imageRef,
     date: `${moment().format("lll")}`,
   });
 

@@ -47,10 +47,30 @@ const ResponsiveInput = ({ contentRows, size }) => {
     }
   }, [image, imagePreviewUrl]);
 
-  const handleSubmit = async () =>
-    await addBlogEntries(author, title, summary, content, importance).then(() =>
-      loadBlog()
-    );
+  const handleSubmit = async () => {
+    if (!image) {
+      let imageRef = null;
+      return await addBlogEntries(
+        author,
+        title,
+        summary,
+        content,
+        importance,
+        imageRef
+      ).then(() => loadBlog());
+    } else if (image) {
+      let uploadProcess = async () => await ImageUpload(image);
+      let imageRef = await uploadProcess().then((res) => res);
+      return await addBlogEntries(
+        author,
+        title,
+        summary,
+        content,
+        importance,
+        imageRef
+      ).then(() => loadBlog());
+    }
+  };
 
   const onHidePreview = () => {
     setShowPreview(false);
@@ -73,14 +93,6 @@ const ResponsiveInput = ({ contentRows, size }) => {
         content={imageSection ? "Hide image section" : "Add an image"}
         color="black"
         onClick={() => showAddImageSection()}
-      />
-
-      <Label
-        as="a"
-        attached="top right"
-        content="Upload"
-        color="blue"
-        onClick={() => ImageUpload(image)}
       />
 
       <Form size={size}>

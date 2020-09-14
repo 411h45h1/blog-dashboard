@@ -34,7 +34,7 @@ const AppState = (props) => {
   const onBlogEntries = useCallback(loadBlog, [uid]);
 
   const ImageUpload = async (image) =>
-    await dbImageUpload(image).then((res) => console.log(res));
+    await dbImageUpload(image).then((res) => res);
 
   useEffect(() => {
     authCheck();
