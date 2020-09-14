@@ -49,7 +49,7 @@ export const deleteBlogEntries = async (bid) => {
 };
 
 export const dbImageUpload = async (image) => {
-  let imageId = Date.now();
+  let imageId = Date.now() + Math.floor(Math.random() * 9000) + 1000;
   let blogImageRef = storageRef.child(`blog/images/${imageId}.jpg`);
 
   let uploadTask = async () => await blogImageRef.put(image);
