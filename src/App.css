@@ -20,6 +20,15 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#blogButton {
+  background-color: #635435;
+  padding: 5;
+}
+
+#blogButton:hover {
+  background-color: #8a764a;
+}
+
 .imgPreview img {
   width: 100%;
   height: 100%;
