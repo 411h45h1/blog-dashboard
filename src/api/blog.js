@@ -25,7 +25,7 @@ export const addBlogEntries = async (
   imageRef
 ) => {
   const collection = db.collection("blog");
-  const bid = Date.now();
+  const bid = Date.now() + Math.floor(Math.random() * 9000) + 1000;
 
   const req = await collection.doc(`${bid}`).set({
     bid: bid,

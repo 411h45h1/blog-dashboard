@@ -7,7 +7,12 @@ const BlogItem = () => {
   const { blogEntries, removeBlog } = state;
   const [showImage, setShowImage] = useState(null);
 
-  const onImage = (bid) => (showImage ? setShowImage(null) : setShowImage(bid));
+  const onImage = (bid) =>
+    showImage
+      ? bid === showImage
+        ? setShowImage(null)
+        : setShowImage(bid)
+      : setShowImage(bid);
 
   return (
     blogEntries &&
@@ -67,7 +72,7 @@ const BlogItem = () => {
               src={i.imageRef.downloadLink}
               height="100%"
               width="100%"
-              style={{ marginTop: "7%" }}
+              style={{ marginTop: "10%" }}
             />
           )}
 
